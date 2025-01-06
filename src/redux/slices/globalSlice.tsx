@@ -1,20 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+interface GlobalState {
+  map: {
+    hideLegends: boolean;
+    selectedPoints: Array<number>;
+  }
+}
+
+const initialState: GlobalState = {
+  map: {
+    hideLegends: false,
+    selectedPoints: [],
+  }
+};
+
+
 export const globalSlice = createSlice({
   name: "global",
-  initialState: {
-    map: {
-      hideLegends: false
-    }
-  },
+  initialState,
   reducers: {
-
-    setMap: (state, action) => {
+    setMapParams: (state, action) => {
       state.map = { ...state.map, ...action.payload };
     }
   },
 });
 
-export const { setMap } = globalSlice.actions;
+export const { setMapParams } = globalSlice.actions;
 
 export default globalSlice.reducer;

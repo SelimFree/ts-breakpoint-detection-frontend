@@ -43,6 +43,16 @@ export const getPoints = async (dispatch: Dispatch) => {
   return handleAllDataGet("points", dispatch, getApiSuccess, TEMPLATES_URL);
 };
 
+export const getPointTimeSeries = async (dispatch: Dispatch, params: any) => {
+  const TEMPLATES_URL = "/tables/get_points_time_series";
+  const paramList = ["geometry_list"];
+
+  const resultingURL = generateParameterizedUrl(TEMPLATES_URL, paramList, params);
+  console.log(resultingURL)
+  console.log(params)
+  return handleAllDataGet("points_time_series", dispatch, getApiSuccess, resultingURL);
+};
+
 const generateParameterizedUrl = (baseURL: string, params: string[], values: any) => {
   const result = [];
   for (let i = 0; i < params.length; i++) {

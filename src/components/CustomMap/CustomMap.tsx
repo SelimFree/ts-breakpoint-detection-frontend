@@ -16,6 +16,7 @@ import { Style, Circle as CircleStyle, Fill, Stroke } from "ol/style";
 import { useDispatch, useSelector } from "react-redux";
 import { getPoints } from "../../api/axios";
 import { RootState } from "../../redux/store";
+import { setMapParams } from "../../redux/slices/globalSlice";
 
 interface PointData {
   position_coordinates: [number, number, number];
@@ -78,6 +79,7 @@ function CustomMap() {
     const highlightLayerSource = highlightLayer.getSource()
     if (highlightLayerSource) {
       highlightLayerSource.clear();
+      dispatch(setMapParams({selectedPoints: []}))
     }
   }
 
@@ -186,6 +188,9 @@ function CustomMap() {
       highlightLayerSource.clear();
       highlightLayerSource.addFeatures(features);
     }
+    const selectedPointsIds = selectedPoints.map(p => p.geometry_id)
+    console.log("Selected points ids: ", selectedPointsIds)
+    dispatch(setMapParams({selectedPoints: selectedPointsIds}))
 
     return () => {
       if (highlightLayer && map) {

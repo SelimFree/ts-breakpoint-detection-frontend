@@ -1,0 +1,11 @@
+.Side {
+    position: absolute;
+    top: 7rem;
+    right: 1rem;
+    width: 40rem;
+    height: 50%;
+    border-radius: var(--small-rad);
+    background-color: white;
+    overflow-y: scroll;
+
+}
