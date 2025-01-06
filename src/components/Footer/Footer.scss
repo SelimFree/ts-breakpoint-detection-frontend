@@ -1,0 +1,16 @@
+.Footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--fungreen);
+  color: var(--white);
+  padding: 1rem;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+}

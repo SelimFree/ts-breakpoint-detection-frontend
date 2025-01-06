@@ -1,0 +1,33 @@
+:root {
+  --black: rgba(0, 0, 0, 0.87);
+  --gunmetal: #28293e;
+  --fungreen: #144739;
+  --apple4: #5bab35;
+  --primary: #ffd900;
+  --secondary: #ef6d58;
+  --white: #fff;
+  --scarpa: #575864;
+  --snowmint: #D6FFDB;
+  --small-rad: 0.4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+} 
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.Page {
+  width: 100%;
+  height: 100%;
+}
